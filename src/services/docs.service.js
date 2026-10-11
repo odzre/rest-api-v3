@@ -155,13 +155,15 @@ export const generateDocs = () => {
           statusCode: 200,
           message: 'API key is valid.',
           data: {
-            id: 'k_xxx',
-            name: 'My Key',
+            id: 'k_1791619061016_fix1q7',
+            name: 'Andika',
+            nomor: '08123456789',
+            type: 'user',
             active: true,
-            expiresAt: '2026-12-31T23:59:59.000Z',
-            createdAt: '2026-01-01T00:00:00.000Z',
+            expiresAt: '2026-11-09T07:57:58.986Z',
+            createdAt: '2026-10-10T07:57:58.986Z',
           },
-          timestamp: '2026-01-01T00:00:00.000Z',
+          timestamp: '2026-10-10T08:00:00.000Z',
         },
       },
       {
@@ -188,13 +190,32 @@ export const generateDocs = () => {
         query: {
           phone: 'string (wajib) - Nomor telepon, misal: 08123456789 atau +628123456789',
         },
-        example: 'GET /api/get-contact/profile?phone=08123456789',
+        example: 'GET /api/get-contact/profile?phone=083162065090',
         response: {
           success: true,
           statusCode: 200,
           message: 'Profil kontak ditemukan.',
-          data: { name: '...', tags: ['...'] },
-          timestamp: '2026-01-01T00:00:00.000Z',
+          data: {
+            meta: { requestId: '6zjh-REQ-6ac9f67fe00a', httpStatusCode: 200 },
+            result: {
+              profile: {
+                name: null,
+                surname: null,
+                phoneNumber: '+6283162065090',
+                displayNumber: '+62 831-6206-5090',
+                countryCode: 'ID',
+                displayName: 'Andika Putea',
+                tagCount: 5,
+                profileImage: 'https://s3-v2.cdngtc.com/profile_img_v2_xxx.png',
+                email: null,
+                trustScore: null,
+              },
+              badge: 'premium',
+              spamInfo: { type: null, degree: 'green' },
+              limitedResult: false,
+            },
+          },
+          timestamp: '2026-10-10T08:30:00.000Z',
         },
       },
       {
@@ -205,13 +226,30 @@ export const generateDocs = () => {
         query: {
           phone: 'string (wajib) - Nomor telepon, misal: 08123456789 atau +628123456789',
         },
-        example: 'GET /api/get-contact/tag?phone=08123456789',
+        example: 'GET /api/get-contact/tag?phone=083162065090',
         response: {
           success: true,
           statusCode: 200,
           message: 'Tag kontak ditemukan.',
-          data: { tags: ['...'] },
-          timestamp: '2026-01-01T00:00:00.000Z',
+          data: {
+            meta: { requestId: 'dmff-REQ-6ac9f68586901', httpStatusCode: 200 },
+            result: {
+              tags: [
+                { tag: 'Dika | Www.odzre.shop', count: 2, isNew: false, removable: true, askReason: true },
+                { tag: 'Odzreshop | Jadi Bot & Topup', count: 1, isNew: false, removable: true, askReason: true },
+              ],
+              deletedTags: [],
+              deletedTagCount: 0,
+              subscriptionInfo: {
+                isPro: true,
+                proStats: true,
+                proAds: true,
+                proWho: true,
+                proTelco: true,
+              },
+            },
+          },
+          timestamp: '2026-10-10T08:30:00.000Z',
         },
       },
       {
@@ -226,12 +264,13 @@ export const generateDocs = () => {
         response: {
           success: true,
           statusCode: 200,
-          message: 'Link verifikasi berhasil dikirim.',
+          message: 'Link berhasil dikirim.',
           data: {
             email: 'user@example.com',
-            instruksi: 'Cek kotak masuk atau spam email Anda...',
+            instruksi:
+              'Cek kotak masuk atau spam email Anda. Salin link verifikasi yang diterima dari Alight Motion dan gunakan pada endpoint /api/alight-motion/verif.',
           },
-          timestamp: '2026-01-01T00:00:00.000Z',
+          timestamp: '2026-10-10T08:32:22.847Z',
         },
       },
       {
@@ -242,7 +281,7 @@ export const generateDocs = () => {
           'Verifikasi link dari email, lalu aktifkan premium Alight Motion (1 tahun) pada akun tersebut.',
         query: {
           email: 'string (wajib) - Email yang sama dengan saat memanggil /send',
-          link: 'string (wajib) - Link verifikasi lengkap yang diterima dari email Alight Motion',
+          link: 'string (wajib) - Link verifikasi lengkap yang diterima dari email Alight Motion (berisi parameter oobCode)',
         },
         example: 'GET /api/alight-motion/verif?email=user@example.com&link=https://...oobCode=xxx',
         response: {
@@ -252,10 +291,11 @@ export const generateDocs = () => {
           data: {
             email: 'user@example.com',
             duration: '1 Year',
-            orderId: '12345',
-            instruksi: 'Akun Anda sekarang sudah berstatus Premium...',
+            orderId: '48271',
+            instruksi:
+              'Akun Anda sekarang sudah berstatus Premium. Silakan login ke aplikasi Alight Motion menggunakan email tersebut atau refresh jika sudah login.',
           },
-          timestamp: '2026-01-01T00:00:00.000Z',
+          timestamp: '2026-10-10T08:32:22.847Z',
         },
       },
     ],
